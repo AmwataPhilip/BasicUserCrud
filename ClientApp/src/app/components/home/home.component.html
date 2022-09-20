@@ -1,0 +1,16 @@
+<div class="g-content-wrapper" *ngIf="this.users | async as users">
+  <ng-container *ngIf="!users.length; else elseTemplate">
+    <div class="l-empty-collection">
+      <h1>No Users Found</h1>
+      <img class="g-image" src="../../assets/empty-collection.svg" />
+      <button mat-button class="g-btn-primary" (click)="handleAddUser()">
+        Add User
+      </button>
+    </div>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <div *ngFor="let user of users">
+      <user-card [user]="user"></user-card>
+    </div>
+  </ng-template>
+</div>

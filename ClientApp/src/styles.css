@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 a {
   color: #0366d6;
 }
@@ -9,8 +15,41 @@ code {
   color: #e01a76;
 }
 
-.btn-primary {
+.g-btn-primary,
+.g-btn-secondary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  height: 26px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.g-btn-primary {
+  background-color: #000000;
+}
+
+.g-btn-secondary {
+  background-color: #6db725;
+}
+
+.g-content-wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+}
+
+.g-image {
+  width: 540px;
+}
+
+.g-form-input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.g-form-input {
+  background-color: #eeeeee;
 }

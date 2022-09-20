@@ -1,0 +1,131 @@
+<div class="g-content-wrapper">
+  <div class="l-top-buttons">
+    <div class="l-left-buttons">
+      <button mat-button disabled="" class="g-btn-secondary">EDIT</button>
+      <button
+        mat-button
+        class="g-btn-primary"
+        (click)="handleUserFormSubmission()"
+      >
+        SAVE
+      </button>
+      <button mat-button class="g-btn-primary">CANCEL</button>
+    </div>
+    <button mat-button class="g-btn-secondary l-right-buttons">
+      DELETE USER
+    </button>
+  </div>
+  <form class="l-form" [formGroup]="userFormGroup">
+    <div class="g-form-input-group">
+      <label>First Name:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder="Natali"
+          formControlName="FirstName"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Last Name:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder="Queen"
+          formControlName="LastName"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Email Address:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder="nata@running-code.com"
+          formControlName="Email"
+          type="email"
+        />
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Password:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder=""
+          formControlName="Password"
+          type="password"
+        />
+      </mat-form-field>
+    </div>
+    <div class="l-mobile-number g-form-input-group" formGroupName="Mobile">
+      <label>Mobile</label>
+      <mat-form-field class="l-country-code">
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder=""
+          formControlName="CountryCode"
+          type="text"
+        />
+        <span matPrefix>+&nbsp;</span>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <input
+          matInput
+          placeholder="234354534535"
+          formControlName="Number"
+          type="text"
+        />
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Role:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <mat-select class="g-form-input" formControlName="Role">
+          <mat-option *ngFor="let role of userRoles" [value]="role">
+            {{ role }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Client</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <mat-select
+          class="g-form-input"
+          placeholder=""
+          formControlName="Client"
+        >
+          <mat-option *ngFor="let client of clients" [value]="client">
+            {{ client }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="g-form-input-group">
+      <label>Status:</label>
+      <mat-form-field>
+        <mat-label></mat-label>
+        <mat-select
+          class="g-form-input"
+          placeholder="Please Select..."
+          formControlName="IsActive"
+        >
+          <mat-option *ngFor="let status of userStatuses" [value]="status">
+            {{ status }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>

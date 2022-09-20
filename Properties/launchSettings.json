@@ -11,7 +11,7 @@
     "BasicUserCrud": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7224;http://localhost:5224",
+      "applicationUrl": "https://localhost:7224;https://localhost:5224",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"

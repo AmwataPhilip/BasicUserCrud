@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using BasicUserCrud.Data;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<BasicUserCrudContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BasicUserCrudContext") ?? throw new InvalidOperationException("Connection string 'BasicUserCrudContext' not found.")));
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<BasicUserCrudContext>(options => options.UseInMemoryDatabase("Users"));
 // Add services to the container.
 
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -22,7 +22,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-
+app.UseCors();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");

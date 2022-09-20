@@ -9,11 +9,16 @@ namespace BasicUserCrud.Data
 {
     public class BasicUserCrudContext : DbContext
     {
-        public BasicUserCrudContext (DbContextOptions<BasicUserCrudContext> options)
+        public BasicUserCrudContext(DbContextOptions<BasicUserCrudContext> options)
             : base(options)
         {
         }
 
-        public DbSet<BasicUserCrud.Models.User> User { get; set; } = default!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
+
+        public DbSet<BasicUserCrud.Models.User> Users { get; set; } = default!;
     }
 }
