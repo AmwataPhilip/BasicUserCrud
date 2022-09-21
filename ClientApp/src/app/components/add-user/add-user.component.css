@@ -1,0 +1,46 @@
+.l-top-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.l-left-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.l-form {
+  display: flex;
+  padding-top: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.l-mobile-number {
+  display: inline-flex;
+  gap: 0;
+}
+
+.l-mobile-number-label {
+  margin-right: 16px;
+}
+
+.l-country-code {
+  width: 72px;
+  max-width: 72px;
+  max-width: 72px;
+}
+
+.l-number {
+  width: 300px;
+  max-width: 300px;
+  max-width: 300px;
+}
+.l-small-input {
+  width: 372px;
+  max-width: 372px;
+  max-width: 372px;
+}

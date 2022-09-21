@@ -1,16 +1,148 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* Provide sufficient contrast against white background */
+
+.mat-form-field-appearance-outline .mat-form-field-outline-start,
+.mat-form-field-appearance-outline .mat-form-field-outline-end,
+.mat-form-field-appearance-outline .mat-form-field-outline-gap {
+  border-width: 2px !important;
+  background-color: #eeee;
+}
+
+.mat-form-field-outline {
+  border-radius: 28px !important;
+}
+
+.ng-untouched .mat-form-field-outline-start,
+.ng-untouched .mat-form-field-outline-end,
+.ng-untouched .mat-form-field-outline-gap,
+.ng-valid .mat-form-field-outline-start,
+.ng-valid .mat-form-field-outline-end,
+.ng-valid .mat-form-field-outline-gap {
+  border-color: #6db725 !important;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.125;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  letter-spacing: normal;
+  width: 60vw;
+  min-width: 54px;
+  margin: 0;
+  height: 48px;
+}
+
+.mat-form-field-empty.mat-form-field-label,
+.mat-form-field-label,
+.mat-form-field-underline,
+.mat-input-element,
+::placeholder {
+  color: darkgray !important;
+}
+
+.mat-select-placeholder,
+.mat-input-placeholder,
+.mat-select-arrow-wrapper,
+.mat-form-field-empty {
+  color: darkgray;
+}
+
+.mat-input-element,
+.mat-select-value {
+  color: black !important;
+}
+.mat-form-field-wrapper {
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mat-select-arrow {
+  background-color: #eeee;
+  color: darkgray !important;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 a {
   color: #0366d6;
+}
+
+label {
+  width: 150px;
+  min-width: 50px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  font-weight: 600;
 }
 
 code {
   color: #e01a76;
 }
 
-.btn-primary {
+.g-btn-primary,
+.g-btn-secondary {
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  height: 26px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.g-btn-primary {
+  background-color: #000000;
+}
+
+.g-btn-secondary {
+  background-color: #6db725;
+}
+
+.g-content-wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 4px;
+}
+
+.g-image {
+  width: 300px;
+}
+
+.g-card,
+.g-card-title,
+.g-card-content,
+.g-card-subtitle {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.g-card {
+  margin: 8px;
+  width: 300px;
+  background-color: #fff !important;
+  color: #000000 !important;
+}
+
+.g-card-subtitle {
+  color: darkgray;
+}
+
+.g-form-input-group {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.g-validation-warning-icon {
+  color: red;
 }

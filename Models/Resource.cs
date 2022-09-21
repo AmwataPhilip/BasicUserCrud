@@ -2,7 +2,7 @@
 {
     public abstract class Resource
     {
-        public DateTime CreatedAt  { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public Int64 CreatedAt  { get; set; }
+        public Int64 UpdatedAt { get; set; }
     }
 }
