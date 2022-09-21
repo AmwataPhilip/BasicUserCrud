@@ -23,13 +23,9 @@ export class UsersService {
   async updateUser(user: User) {
     try {
       await lastValueFrom(
-        this.httpClient.put(
-          environment.API_USERS_URL,
-          { user },
-          {
-            params: { id: user.Id.toString() },
-          }
-        )
+        this.httpClient.put(environment.API_USERS_URL, user, {
+          params: { id: user.id.toString() },
+        })
       );
       return;
     } catch (error) {
@@ -40,7 +36,7 @@ export class UsersService {
   async addUser(user: User) {
     try {
       const responseValue = await lastValueFrom(
-        this.httpClient.post(environment.API_USERS_URL, { user })
+        this.httpClient.post(environment.API_USERS_URL, user)
       );
       return responseValue;
     } catch (error) {

@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatTooltipModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -43,6 +45,7 @@ import { HomeComponent } from './components/home/home.component';
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
+    MatTooltipModule,
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent],

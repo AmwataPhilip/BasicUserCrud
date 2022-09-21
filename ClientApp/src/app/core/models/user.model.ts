@@ -1,13 +1,14 @@
 import { Resource } from './resource.model';
 
 export class User extends Resource {
-  Id = 0;
-  FirstName = '';
-  LastName = '';
-  Email = '';
-  Password = '';
-  Mobile = { CountryCode: '', Number: '' };
-  Role = '';
-  Client = '';
-  IsActive = '';
+  id = 0;
+  firstName = '';
+  lastName = '';
+  email = '';
+  password = '';
+  countryCode = '';
+  number = '';
+  role = '';
+  client = '';
+  isActive = '';
 }

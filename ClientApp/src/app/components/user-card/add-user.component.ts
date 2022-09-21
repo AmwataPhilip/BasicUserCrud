@@ -12,6 +12,6 @@ export class UserCardComponent {
   constructor(private userService: UsersService) {}
 
   handleDeleteUser() {
-    this.userService.deleteUser(this.user.Id);
+    this.userService.deleteUser(this.user.id);
   }
 }

@@ -1,4 +1,8 @@
-export const USER_ROLES = ['Client', 'Admin', 'Regulator'];
+export const USER_ROLES = [
+  'Client Role - all permissions',
+  'Admin - super permissions',
+  'Regulator - read permissions',
+];
 
 export const USER_STATUSES = ['Active', 'Disabled'];
 

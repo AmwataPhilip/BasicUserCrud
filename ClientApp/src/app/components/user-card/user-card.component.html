@@ -1,14 +1,16 @@
-<mat-card>
+<mat-card class="g-card">
   <mat-card-header>
-    <mat-card-title>{{ user.FirstName }} {{ user.LastName }}</mat-card-title>
-    <mat-card-subtitle>{{ user.Client }} - {{ user.Role }}</mat-card-subtitle>
+    <mat-card-title class="g-card-title"
+      >{{ user.firstName | uppercase }}
+      {{ user.lastName | uppercase }}
+    </mat-card-title>
+    <mat-card-subtitle class="g-card-subtitle"
+      >{{ user.client }} - {{ user.role }}</mat-card-subtitle
+    >
   </mat-card-header>
-  <mat-card-content>
-    <p>{{ user.Email }}</p>
-    <p>{{ user.Mobile }}</p>
-    <p>{{ user.IsActive }}</p>
+  <mat-card-content class="g-card-content">
+    <p>{{ user.email }}</p>
+    <p>+{{ user.countryCode }} {{ user.number }}</p>
+    <p>{{ user.isActive }}</p>
   </mat-card-content>
-  <mat-card-actions align="start">
-    <button mat-button (click)="handleDeleteUser()">DELETE USER</button>
-  </mat-card-actions>
 </mat-card>

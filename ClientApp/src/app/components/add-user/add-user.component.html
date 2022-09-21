@@ -1,130 +1,220 @@
 <div class="g-content-wrapper">
   <div class="l-top-buttons">
     <div class="l-left-buttons">
-      <button mat-button disabled="" class="g-btn-secondary">EDIT</button>
+      <button mat-button disabled class="g-btn-secondary">EDIT</button>
       <button
         mat-button
+        type="submit"
         class="g-btn-primary"
         (click)="handleUserFormSubmission()"
       >
         SAVE
       </button>
-      <button mat-button class="g-btn-primary">CANCEL</button>
+      <button mat-button class="g-btn-primary" (click)="handleNavigateToHome()">
+        CANCEL
+      </button>
     </div>
-    <button mat-button class="g-btn-secondary l-right-buttons">
+    <button mat-button disabled class="g-btn-secondary l-right-buttons">
       DELETE USER
     </button>
   </div>
   <form class="l-form" [formGroup]="userFormGroup">
     <div class="g-form-input-group">
-      <label>First Name:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>First Name*</label>
+      <mat-form-field appearance="outline">
         <input
           matInput
           placeholder="Natali"
-          formControlName="FirstName"
+          formControlName="firstName"
           type="text"
         />
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('firstName')?.touched &&
+            this.userFormGroup.get('firstName')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Last Name:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>Last Name*</label>
+      <mat-form-field appearance="outline">
         <input
           matInput
           placeholder="Queen"
-          formControlName="LastName"
+          formControlName="lastName"
           type="text"
         />
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('lastName')?.touched &&
+            this.userFormGroup.get('lastName')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Email Address:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>Email Address*</label>
+      <mat-form-field appearance="outline">
         <input
           matInput
           placeholder="nata@running-code.com"
-          formControlName="Email"
+          formControlName="email"
           type="email"
         />
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('email')?.touched &&
+            this.userFormGroup.get('email')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Password:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>Password*</label>
+      <mat-form-field appearance="outline">
         <input
           matInput
           placeholder=""
-          formControlName="Password"
+          formControlName="password"
           type="password"
         />
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('password')?.touched &&
+            this.userFormGroup.get('password')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
-    <div class="l-mobile-number g-form-input-group" formGroupName="Mobile">
-      <label>Mobile</label>
-      <mat-form-field class="l-country-code">
-        <mat-label></mat-label>
+    <div class="l-mobile-number g-form-input-group">
+      <label class="l-mobile-number-label">Mobile</label>
+      <mat-form-field class="l-country-code" appearance="outline">
         <input
           matInput
-          placeholder=""
-          formControlName="CountryCode"
+          placeholder="+"
+          formControlName="countryCode"
           type="text"
         />
-        <span matPrefix>+&nbsp;</span>
+        <mat-icon
+          matSuffix
+          matTooltip="This field must be a number not longer than 3 digits"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('countryCode')?.touched &&
+            this.userFormGroup.get('countryCode')?.errors
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <mat-form-field class="l-number" appearance="outline">
         <input
           matInput
           placeholder="234354534535"
-          formControlName="Number"
+          formControlName="number"
           type="text"
         />
+        <mat-icon
+          matSuffix
+          matTooltip="This field must be a number not longer than 20 digits"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('number')?.touched &&
+            this.userFormGroup.get('number')?.errors
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Role:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
-        <mat-select class="g-form-input" formControlName="Role">
+      <label>Role*</label>
+      <mat-form-field class="l-small-input" appearance="outline">
+        <mat-select
+          class="g-form-input"
+          floatlLabel="never"
+          formControlName="role"
+          placeholder="Client Role - all permissions"
+        >
           <mat-option *ngFor="let role of userRoles" [value]="role">
             {{ role }}
           </mat-option>
         </mat-select>
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('role')?.touched &&
+            this.userFormGroup.get('role')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Client</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>Client*</label>
+      <mat-form-field appearance="outline">
         <mat-select
           class="g-form-input"
-          placeholder=""
-          formControlName="Client"
+          floatlLabel="never"
+          placeholder="Client Name"
+          formControlName="client"
         >
           <mat-option *ngFor="let client of clients" [value]="client">
             {{ client }}
           </mat-option>
         </mat-select>
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('client')?.touched &&
+            this.userFormGroup.get('client')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
     <div class="g-form-input-group">
-      <label>Status:</label>
-      <mat-form-field>
-        <mat-label></mat-label>
+      <label>Status*</label>
+      <mat-form-field class="l-small-input" appearance="outline">
         <mat-select
           class="g-form-input"
+          floatlLabel="never"
           placeholder="Please Select..."
-          formControlName="IsActive"
+          formControlName="isActive"
         >
           <mat-option *ngFor="let status of userStatuses" [value]="status">
             {{ status }}
           </mat-option>
         </mat-select>
+        <mat-icon
+          matSuffix
+          matTooltip="This is a mandatory field"
+          class="g-validation-warning-icon"
+          *ngIf="
+            this.userFormGroup.get('isActive')?.touched &&
+            this.userFormGroup.get('isActive')?.errors?.required
+          "
+          >warning</mat-icon
+        >
       </mat-form-field>
     </div>
   </form>

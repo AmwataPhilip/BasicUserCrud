@@ -1,4 +1,4 @@
 export abstract class Resource {
-  CreatedAt = 0;
-  UpdatedAt = 0;
+  createdAt = 0;
+  updatedAt = 0;
 }
